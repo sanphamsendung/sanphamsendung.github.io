@@ -3,7 +3,9 @@ import { createRoot } from 'react-dom/client';
 import { createClient } from '@supabase/supabase-js';
 import './styles.css';
 
-const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_ANON_KEY);
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://ssmdvsmummrtrbklionc.supabase.co';
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'sb_publishable_BVEd46erpOczjRGaTE5khQ_ob6LH9hr';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const seedProducts = [
   {id:'p1',slug:'giuong-ngu-cho-cho-meo',name:'Giường ngủ cho chó mèo mềm mại chống trượt',images:['https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80'],price:189000,original_price:299000,discount:37,rating:4.9,sold_count:'2.4k',category_id:'pet',description:'Không gian nghỉ ngơi êm ái, mềm mại và dễ vệ sinh cho thú cưng.',affiliate_link:'https://shopee.vn/',is_active:true,is_top_selling:true,rank:1},
