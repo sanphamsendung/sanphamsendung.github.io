@@ -1,4 +1,4 @@
--- Run this once in Supabase SQL Editor.
+-- Run this entire file in Supabase SQL Editor.
 create extension if not exists pgcrypto;
 
 create table if not exists public.products (
@@ -23,6 +23,23 @@ create table if not exists public.products (
   updated_at timestamptz default now()
 );
 
+-- Safe migration if the table already existed with an older schema.
+alter table public.products add column if not exists images text[] default '{}';
+alter table public.products add column if not exists original_price integer default 0;
+alter table public.products add column if not exists discount integer default 0;
+alter table public.products add column if not exists rating numeric(2,1) default 0;
+alter table public.products add column if not exists sold_count text default '0';
+alter table public.products add column if not exists category_id text default 'pet';
+alter table public.products add column if not exists description text default '';
+alter table public.products add column if not exists affiliate_link text default '';
+alter table public.products add column if not exists is_active boolean default true;
+alter table public.products add column if not exists is_top_selling boolean default false;
+alter table public.products add column if not exists is_mall boolean default false;
+alter table public.products add column if not exists is_favorite boolean default false;
+alter table public.products add column if not exists rank integer;
+alter table public.products add column if not exists created_at timestamptz default now();
+alter table public.products add column if not exists updated_at timestamptz default now();
+
 alter table public.products enable row level security;
 grant usage on schema public to anon, authenticated;
 grant select, insert, update, delete on table public.products to anon, authenticated;
@@ -35,13 +52,9 @@ drop policy if exists "Allow public delete products" on public.products;
 
 create policy "Public can read active products" on public.products
 for select to anon, authenticated using (is_active = true);
-
--- Temporary demo-mode write policies. Replace with authenticated Admin policies before production.
 create policy "Allow public insert products" on public.products
 for insert to anon, authenticated with check (true);
-
 create policy "Allow public update products" on public.products
 for update to anon, authenticated using (true) with check (true);
-
 create policy "Allow public delete products" on public.products
 for delete to anon, authenticated using (true);
