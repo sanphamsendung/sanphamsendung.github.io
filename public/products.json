@@ -1,0 +1,11 @@
+[
+  {
+    "id":"p1","slug":"giuong-ngu-cho-cho-meo","name":"Giường ngủ cho chó mèo mềm mại chống trượt","images":["https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80"],"price":189000,"original_price":299000,"discount":37,"rating":4.9,"sold_count":"2.4k","category_id":"pet","description":"Không gian nghỉ ngơi êm ái, mềm mại và dễ vệ sinh cho thú cưng.","affiliate_link":"https://shopee.vn/","is_active":true,"is_top_selling":true,"rank":1,"is_mall":false,"is_favorite":false
+  },
+  {
+    "id":"p2","slug":"binh-uong-nuoc-tu-dong-cho-meo","name":"Bình uống nước tự động êm ái cho mèo","images":["https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=900&q=80"],"price":259000,"original_price":399000,"discount":35,"rating":4.8,"sold_count":"1.8k","category_id":"pet","description":"Dòng nước tuần hoàn giúp thú cưng uống đủ nước mỗi ngày.","affiliate_link":"https://shopee.vn/","is_active":true,"is_top_selling":true,"rank":2,"is_mall":false,"is_favorite":false
+  },
+  {
+    "id":"p3","slug":"do-choi-ganh-keo-cho-cho","name":"Đồ chơi gặm kéo bền chắc cho cún","images":["https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80"],"price":79000,"original_price":129000,"discount":39,"rating":4.9,"sold_count":"3.1k","category_id":"pet","description":"Đồ chơi tương tác giúp làm sạch răng và giảm căng thẳng.","affiliate_link":"https://shopee.vn/","is_active":true,"is_top_selling":true,"rank":3,"is_mall":false,"is_favorite":false
+  }
+]
