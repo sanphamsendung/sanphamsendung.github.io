@@ -24,6 +24,7 @@ create table if not exists public.products (
 );
 
 alter table public.products enable row level security;
+grant usage on schema public to anon, authenticated;
 grant select, insert, update, delete on table public.products to anon, authenticated;
 
 drop policy if exists "Public can read active products" on public.products;
